@@ -5,7 +5,7 @@ If you Want to create a new dataset taking pictures using the webcam, you can ru
 To create the labels of the images, labelimg can be used. Instalation and configuration of labelimg can be found in the link:
  - **Labelimg: https://github.com/tzutalin/labelImg**
 
-Labelimg creates a set of xml files asociated to each image. The file **Dataset_generation.ipynb** could be used to transform the xml files to csv files and to divide the dataset into train and test.
+Labelimg creates a set of xml files associated to each image. The file **Dataset_generation.ipynb** could be used to transform the xml files to csv files and to divide the dataset into train and test.
 
 # Model training
 
