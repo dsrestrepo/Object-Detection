@@ -1,66 +1,36 @@
-## IMPORTANTE
+# Dataset
 
-CREAR UNA CARPETA LLAMADA images en el directorio /labelImg
+If you Want to create a new dataset taking pictures using the webcam, you can run the file **Dataset_creation.ipynb**. Use key 1 to take a new photo and key q you close the camera.
 
-# Título del Proyecto
+To create the labels of the images, labelimg can be used. Instalation and configuration of labelimg can be found in the link:
+ - **Labelimg: https://github.com/tzutalin/labelImg**
 
-En este proyecto realizamos la detección de objetos en video usando el modelo Retinanet, entrenando una red neuronal convolucional ResNet50 preentrenada.
+Labelimg creates a set of xml files asociated to each image. The file **Dataset_generation.ipynb** could be used to transform the xml files to csv files and to divide the dataset into train and test.
 
+# Model training
 
-### Pre-requisitos 📋
+To train the model keras-retinanet implementation (link: https://github.com/fizyr/keras-retinanet). In this case the model was trained using a Resnet50 backbone. The configuration and trainig can be found in file: **train_V2.ipynb**
 
-      _Anaconda
-      _Jupyter notebook o google colab
-      _Tensorflow 
-      _Keras
-      _Keras Retinanet (https://github.com/fizyr/keras-retinanet)
-      _labelImg (https://github.com/tzutalin/labelImg.git)
+# Model Inference
 
-### Instalación labelImg (Windows + Anaconda)🔧
+Some examples of model inference can be found in files:
 
-      git clone https://github.com/tzutalin/labelImg.git
-      cd labelImg
-      conda install pyqt=5
-      pyrcc5 -o libs/resources.py resources.qrc
-      python labelImg.py
+- **webcam_inference.ipynb** : Inference of trained model using webcam 
+- **Model_Inference.ipynb** : Inference of trained model in a set of images
+- **ResNet50RetinaNet(COCO_Example).ipynb** : Inference of a model trained in COCO dataset.
 
-### Descripción del directorio
+# Enviorment:
 
-1. ...\Hand-Detection-Retinanet\keras-retinanet\images
+macOS Monterrey
+Conda-Miniforge-pypy3
+Python 3.9.12
 
-      Directorio donde estan las imagenes para el entrenamiento
-
-2. ...\Hand-Detection-Retinanet\keras-retinanet\snapshots
-      
-      En este directorio debe encontrarse el modelo entrenado de extensión .h5
-
-3. ...\Hand-Detection-Retinanet\keras-retinanet
-
-      En este directorio deben encontrarse los archivos .csv que contienen la información del dataset de entrenamiento y pruebas
-        annotations.csv
-        classes.csv
-        annotations_test.csv
-
-4. ... El modelo .h5 debe guardarse en el directorio ...\keras-retinanet\snapshots
-
-5. CodeTrainPredict.txt contiene el codigo para google colab que entrena la red neuronal
-
-### Modificación importante
-
-      Al clonar el repositorio de keras-retinanet debemos asegurar trabajar con las versiones correctas de keras y tensorflow, para eso ejecutar las siguientes lineas:
-      
-      !pip uninstall keras -y
-      !pip uninstall keras-nightly -y
-      !pip uninstall keras-Preprocessing -y
-      !pip uninstall keras-vis -y
-      !pip uninstall tensorflow -y
-      !pip uninstall h5py
-
-      !pip install tensorflow==2.1.0
-      !pip install keras==2.3.1
-      !pip install h5py==2.10.0
- 
-      Tipear y, luego enter en el mensaje que aparece después de las instrucciones anteriores
- 
-# **Canal de Youtube**
-[Click aquì pare ver mi canal de YOUTUBE](https://www.youtube.com/channel/UCr_dJOULDvSXMHA1PSHy2rg)
+- keras                     2.8.0
+- tensorflow-macos          2.8.0
+- tensorflow-metal          0.4.0
+- scikit-image              0.19.2
+- scikit-learn              1.0.2
+- seaborn                   0.11.2
+- opencv-python             4.5.5.64
+- h5py                      3.6.0
+- pandas                    1.4.2
